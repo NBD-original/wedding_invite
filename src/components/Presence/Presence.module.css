@@ -3,6 +3,7 @@
   overflow: hidden;
   background: #122622;
   padding: 70px 0 90px;
+  margin-top: -100px;
 }
 
 /* Фон: редкий + “угловые” ощущения */
@@ -22,7 +23,7 @@
   /* разный сдвиг — не сетка */
   background-position: 40px 80px, 220px 460px;
 
-  opacity: 0.10;
+  opacity: 0.70;
 }
 
 /* Центровка сцены */

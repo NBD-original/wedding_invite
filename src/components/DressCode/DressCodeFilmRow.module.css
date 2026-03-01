@@ -23,8 +23,10 @@
 
   /* контейнер ленты */
   .loop {
+    position: relative;
     overflow: hidden;
     padding: 6px 6px 10px;
+    z-index: 999;
   }
   
   /* движущаяся дорожка */
@@ -35,6 +37,7 @@
     will-change: transform;
     animation: marquee var(--speed, 18s) linear infinite;
     animation-direction: var(--dir, normal);
+    z-index: 999;
   }
   
   /* пауза при касании/наведении */
