@@ -10,7 +10,7 @@ export default function Gallery() {
         {/* Картинка на всю ширину */}
         <img
           className={styles.poster}
-          src="/images/gallery/bg.png"
+          src="images/gallery/bg.png"
           alt="Финальный экран"
           draggable="false"
         />
@@ -47,7 +47,7 @@ export default function Gallery() {
             {/* ✅ картинка над текстом */}
             <img
               className={styles.thanksArt}
-              src="/images/gallery/Group.png"
+              src="images/gallery/Group.png"
               alt=""
               draggable="false"
             />

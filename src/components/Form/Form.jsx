@@ -91,7 +91,7 @@ export default function GuestForm() {
       <div className={styles.inner}>
         <motion.img
           className={styles.title}
-          src="/images/form/form-title.png"
+          src="images/form/form-title.png"
           alt="Form"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -45,7 +45,7 @@ export default function Timing() {
       {/* Свет картинкой */}
       <motion.img
         className={styles.light}
-        src="/images/timing/light.png"
+        src="images/timing/light.png"
         alt=""
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -58,7 +58,7 @@ export default function Timing() {
       <div className={styles.stage}>
         <motion.img
           className={styles.title}
-          src="/images/timing/timing-title.png"
+          src="images/timing/timing-title.png"
           alt="Timing"
           variants={cinematicScale({ duration: 1 })}
           initial="hidden"
@@ -69,7 +69,7 @@ export default function Timing() {
 
         <motion.img
           className={styles.seats}
-          src="/images/timing/seats.png"
+          src="images/timing/seats.png"
           alt=""
           variants={fadeIn({ y: 18, duration: 0.9 })}
           initial="hidden"

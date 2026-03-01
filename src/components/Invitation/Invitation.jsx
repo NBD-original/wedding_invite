@@ -9,7 +9,7 @@ export default function Invitation() {
         {/* Рука + карточка: выезжает слева */}
         <motion.img
           className={styles.hand}
-          src="/images/invitation/hand-card.png"
+          src="images/invitation/hand-card.png"
           alt="Приглашение"
           initial={{ x: -140, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -25,7 +25,7 @@ export default function Invitation() {
         {/* Рамка с фото: мягкое появление */}
         <motion.img
           className={styles.frame}
-          src="/images/invitation/photo-frame.png"
+          src="images/invitation/photo-frame.png"
           alt="Фото"
           variants={fadeIn({ y: 16, duration: 0.9 })}
           initial="hidden"
@@ -37,7 +37,7 @@ export default function Invitation() {
         {/* Билеты: появление снизу слева */}
         <motion.img
           className={styles.tickets}
-          src="/images/invitation/tickets.png"
+          src="images/invitation/tickets.png"
           alt=""
           initial={{ y: 18, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

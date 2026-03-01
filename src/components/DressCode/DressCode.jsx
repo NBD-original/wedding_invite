@@ -9,7 +9,7 @@ export default function DressCode() {
       <div className={styles.stage}>
         <motion.img
           className={styles.topArt}
-          src="/images/dresscode/top.png"
+          src="images/dresscode/top.png"
           alt=""
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export default function DressCode() {
         <div className={styles.inner}>
           <motion.img
             className={styles.title}
-            src="/images/dresscode/dresscode-title.png"
+            src="images/dresscode/dresscode-title.png"
             alt="Dress-code"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,10 +65,10 @@ export default function DressCode() {
         <DressCodeFilmRow
           title="Women"
           photos={[
-            "/images/dresscode/women/01.jpg",
-            "/images/dresscode/women/02.jpg",
-            "/images/dresscode/women/03.jpg",
-            "/images/dresscode/women/04.jpg",
+            "images/dresscode/women/01.jpg",
+            "images/dresscode/women/02.jpg",
+            "images/dresscode/women/03.jpg",
+            "images/dresscode/women/04.jpg",
           ]}
           speed={18}
         />
@@ -76,10 +76,10 @@ export default function DressCode() {
         <DressCodeFilmRow
           title="Men"
           photos={[
-            "/images/dresscode/men/01.jpg",
-            "/images/dresscode/men/02.jpg",
-            "/images/dresscode/men/03.jpg",
-            "/images/dresscode/men/04.jpg",
+            "images/dresscode/men/01.jpg",
+            "images/dresscode/men/02.jpg",
+            "images/dresscode/men/03.jpg",
+            "images/dresscode/men/04.jpg",
           ]}
           speed={20}
           reverse

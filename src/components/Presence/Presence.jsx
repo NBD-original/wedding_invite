@@ -18,7 +18,7 @@ export default function Presence() {
           {/* ✅ Заголовок-картинка как на макете */}
           <motion.img
             className={styles.titleImg}
-            src="/images/presence/presence-title.png"
+            src="images/presence/presence-title.png"
             alt="Presence"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

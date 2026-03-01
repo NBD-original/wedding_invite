@@ -22,7 +22,7 @@ export default function Hero() {
       >
         <motion.img
           className={styles.dateFrame}
-          src="/images/hero/date-frame.png"
+          src="images/hero/date-frame.png"
           alt="Дата свадьбы"
           variants={fadeIn({ y: 12, duration: 0.8, delay: 0.05 })}
           draggable="false"
@@ -30,7 +30,7 @@ export default function Hero() {
 
         <motion.img
           className={styles.names}
-          src="/images/hero/names.png"
+          src="images/hero/names.png"
           alt="Nikita & Maria"
           variants={cinematicScale({ duration: 1.0, delay: 0.15 })}
           draggable="false"

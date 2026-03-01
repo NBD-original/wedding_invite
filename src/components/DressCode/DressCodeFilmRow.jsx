@@ -47,7 +47,7 @@ export default function DressCodeFilmRow({
               {/* Одна рамка на 2 фото */}
               <img
                 className={styles.frame}
-                src="/images/dresscode/frames/frame-2.png"
+                src="images/dresscode/frames/frame-2.png"
                 alt=""
                 draggable="false"
               />
