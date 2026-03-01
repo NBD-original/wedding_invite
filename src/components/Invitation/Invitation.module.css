@@ -1,0 +1,117 @@
+.section {
+  background: #122622;
+  overflow: hidden;        /* важно, чтобы хвосты не создавали скролл */
+  overflow-x: hidden;
+  position: relative;
+       /* обычные отступы */
+}
+
+.stage {
+  position: relative; 
+                 /* ✅ вместо padding-top секции */
+}
+
+/* ✅ рука — absolute, чтобы не создавала отступы */
+.hand {
+  position: absolute;
+
+  left: -18px;
+  width: 380px;
+  height: auto;
+  z-index: 5;
+
+  pointer-events: none;
+  user-select: none;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.frame {
+  position: relative;
+  display: block;
+
+  margin: 120px auto 0;
+  width: 340px;
+  height: auto;
+  z-index: 3;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.tickets {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  width: 190px;
+  height: auto;
+  z-index: 6;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: -200px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.pill {
+  width: 44px;
+  height: 78px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  width: 2px;
+  height: 26px;
+  background: #ffffff;
+  position: relative;
+  display: block;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* ступени */
+/* @media (min-width: 390px) {
+  .stage { max-width: 460px; min-height: 690px; }
+  .hand { width: 400px; top: -56px; }
+  .frame { width: 360px; margin-top: 160px; }
+  .tickets { width: 195px; }
+}
+
+@media (min-width: 430px) {
+  .stage { max-width: 520px; min-height: 740px; }
+  .hand { width: 430px; top: -64px; }
+  .frame { width: 400px; margin-top: 170px; }
+  .tickets { width: 210px; left: 14px; }
+}
+
+@media (min-width: 768px) {
+  .section { padding: 72px 0; }
+  .stage { max-width: 620px; min-height: 820px; }
+
+  .hand { width: 420px; left: -16px; }
+  .frame { width: 460px; margin-top: 190px; }
+  .tickets { width: 240px; left: 24px; bottom: 22px; }
+} */

@@ -1,0 +1,135 @@
+.hero {
+  min-height: 100svh;
+  position: relative;
+
+  /* ✅ теперь рука из Invitation может перекрывать Hero */
+  overflow: visible;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* ✅ контейнер, который обрезает ТОЛЬКО фон */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;   /* фон и его градиенты не вылезают */
+  z-index: -3;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: url("/images/hero/bg.jpg") center / cover no-repeat;
+}
+
+/* затемнение для читаемости */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: -1;
+}
+
+/* Контент: вертикальная композиция как в макете */
+.inner {
+  width: 100%;
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Важно: только целые значения (без clamp/vw) */
+  gap: 22px;
+
+  /* Чуть опускаем общий блок вниз, чтобы рамка не упиралась */
+  padding-top: 18px;
+}
+
+/* ───── КАРТИНКИ: ЧЕТКОСТЬ И ЗАПРЕТ "МЫЛА" ───── */
+
+.dateFrame,
+.names,
+.subtitle {
+  display: block;
+  height: auto;
+
+  /* Помощь для тонких линий PNG */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  /* Убирает микросмазывание от GPU у некоторых браузеров */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Рамка с датой — выше */
+.dateFrame {
+  width: 132px;
+  opacity: 0.96;
+
+  /* Поднять выше относительно центра */
+  margin-top: -34px;
+  margin-bottom: 2px;
+}
+
+/* Имена — основной акцент */
+.names {
+  width: 360px;
+}
+
+/* Подпись/декор */
+.subtitle {
+  width: 280px;
+  opacity: 0.95;
+
+  /* Чуть прижимаем к именам как в макете */
+  margin-top: -6px;
+}
+
+/* ───── АДАПТИВ: СТУПЕНЯМИ (ЦЕЛЫЕ PX) ───── */
+
+@media (min-width: 375px) {
+  .dateFrame { width: 140px; }
+  .names { width: 380px; }
+  .subtitle { width: 300px; }
+}
+
+@media (min-width: 390px) {
+  .dateFrame { width: 150px; }
+  .names { width: 400px; }
+  .subtitle { width: 320px; }
+}
+
+@media (min-width: 430px) {
+  .dateFrame { width: 170px; }
+  .names { width: 440px; }
+  .subtitle { width: 360px; }
+}
+
+/* Планшеты/десктоп */
+@media (min-width: 768px) {
+  .inner {
+    max-width: 620px;
+    gap: 26px;
+    padding-top: 22px;
+  }
+
+  .dateFrame { width: 180px; margin-top: -30px; }
+  .names { width: 560px; }
+  .subtitle { width: 420px; }
+}

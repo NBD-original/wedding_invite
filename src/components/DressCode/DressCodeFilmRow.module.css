@@ -1,0 +1,102 @@
+.row {
+    margin-top: 18px;
+  }
+  
+  .rowHead {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 6px 8px;
+  }
+  
+  .rowTitle {
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0;
+  
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase; /* если надо как в кино-эстетике */
+  }
+
+
+  /* контейнер ленты */
+  .loop {
+    overflow: hidden;
+    padding: 6px 6px 10px;
+  }
+  
+  /* движущаяся дорожка */
+  .track {
+    display: flex;
+    gap: 0px;
+    width: max-content;
+    will-change: transform;
+    animation: marquee var(--speed, 18s) linear infinite;
+    animation-direction: var(--dir, normal);
+  }
+  
+  /* пауза при касании/наведении */
+  .loop:active .track,
+  .loop:hover .track {
+    animation-play-state: paused;
+  }
+  
+  .unit {
+    position: relative;
+    flex: 0 0 auto;
+    width: min(92vw, 520px);
+    aspect-ratio: 520 / 240;
+  }
+  
+  /* рамка */
+  .frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* без лишних полей */
+    z-index: 3;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  /* окна-маски */
+  .p1, .p2 {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 6px;
+    z-index: 2;
+  }
+  
+  /* картинки внутри окон */
+  .p1 img, .p2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* координаты окон под frame-2.png */
+  .p1 {
+    left: 0%;
+    top: 18%;
+    width: 50%;
+    height: 64%;
+  }
+  
+  .p2 {
+    left: 50%;
+    top: 18%;
+    width: 50%;
+    height: 64%;
+  }
+  
+  /* бесконечность: уезжаем на половину (потому что элементы продублированы) */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  

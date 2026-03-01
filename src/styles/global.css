@@ -1,0 +1,95 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    color: var(--text);
+    font-family: var(--font-ui);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Mobile UX */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .app {
+    min-height: 100%;
+  }
+  
+  .page {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Mobile-first container */
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: max(var(--s-4), env(safe-area-inset-left));
+    padding-right: max(var(--s-4), env(safe-area-inset-right));
+  }
+  
+  .container.narrow {
+    max-width: var(--container-narrow);
+  }
+  
+  .section {
+    padding: var(--s-8) 0;
+    position: relative;
+  }
+  
+  .sectionTitle {
+    font-family: var(--font-serif);
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    font-size: clamp(26px, 7vw, 44px);
+    margin: 0 0 var(--s-4);
+  }
+  
+  .text {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  /* лучше читаемость на телефоне */
+  p {
+    margin: 0 0 var(--s-4);
+  }
+  
+  .divider {
+    height: 1px;
+    background: var(--line);
+    margin: var(--s-7) 0;
+  }
+  
+  /* Links/buttons should be easy to tap */
+  a,
+  button {
+    touch-action: manipulation;
+  }
+  
+  /* Tablet+ tweaks */
+  @media (min-width: 768px) {
+    .container {
+      padding-left: var(--s-5);
+      padding-right: var(--s-5);
+    }
+    .sectionTitle {
+      margin-bottom: var(--s-5);
+    }
+  }
+  
+  /* Небольшая помощь для четкости PNG с тонкими линиями */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Убирает возможные артефакты при таче */
+* {
+  -webkit-tap-highlight-color: transparent;
+}

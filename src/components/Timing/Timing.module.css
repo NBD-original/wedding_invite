@@ -1,0 +1,235 @@
+.section {
+  position: relative;
+  overflow: visible;
+  overflow-x: hidden;
+  background: #122622;
+  z-index: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
+
+
+/* Свет картинкой (лежит сверху, но не мешает кликам) */
+.light {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+
+  /* чтобы выглядело как свет, а не “картинка” */
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+/* Сцена: заголовок + кресла */
+.stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Заголовок справа над креслами */
+.title {
+  position: absolute;
+  right: 24px;
+  top: -175px;            /* ⬅️ ВЫШЕ */
+  width: 250px;
+
+  z-index: 6;           /* ⬅️ ПОВЕРХ дыма */
+  opacity: 0.85;        /* как на макете */
+
+  pointer-events: none;
+}
+
+
+/* Кресла на всю ширину экрана */
+.seats {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  margin-top: 400px;
+
+  position: relative;
+  z-index: 2;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+
+
+/* ───── Карточка тайминга: “вплавляется” в дымку кресел ───── */
+.timeline {
+  position: relative;
+  z-index: 4;
+
+  width: 100%;
+  margin-top: -200px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.0) 0px,
+    rgba(255,255,255,0.75) 80px,
+    rgba(255,255,255,1.0) 180px
+  );
+
+  padding: 80px 0 40px;
+}
+
+
+/* дополнительная мягкая дымка сверху карточки */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  right: -14px;
+  top: -46px;
+  height: 96px;
+  background: radial-gradient(
+    60% 120% at 50% 100%,
+    rgba(255, 255, 255, 0.849),
+    rgba(255, 255, 255, 0.0) 70%
+  );
+  filter: blur(14px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.timelineInner {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ───── Таймлайн: центрированная карточка ───── */
+.item {
+  padding: 28px 0;
+  text-align: center;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 12:00 */
+.time {
+  font-family: "Cormorant SC", var(--font-serif);
+  font-weight: 600;
+  font-size: 34.46px;
+  line-height: 31px;
+  color: #0f1a17;
+}
+
+/* Трансфер */
+.titleText {
+  font-family: "Cormorant SC", var(--font-serif);
+  font-weight: 600;
+  font-size: 34.46px;
+  line-height: 31px;
+  color: #0f1a17;
+}
+
+/* Блок текста */
+.textBlock {
+  margin-top: 14px;
+  max-width: 300px;   /* ✅ текст стал уже */
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* строка */
+.textLine {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+
+  font-family: "Cormorant", var(--font-serif);
+  font-weight: 400;
+  font-size: 18.26px;
+  line-height: 122%;
+  letter-spacing: -0.03em;
+  color: #404040;
+  text-align: center;
+}
+
+/* 📍 */
+.pin {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 180px;
+  height: 220px;
+
+  background: radial-gradient(
+    50% 100% at 50% 100%,
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.0) 70%
+  );
+
+  filter: blur(28px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+.scrollHint {
+  margin: 26px auto 0;
+  width: fit-content;
+  pointer-events: none;
+  padding-bottom: 60px;
+
+}
+
+.pill {
+  width: 44px;
+  height: 78px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;     /* ярче */
+  background: rgba(0, 0, 0, 0.25); /* заметнее */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.arrow {
+  width: 2px;                  /* толще */
+  height: 26px;
+  background: #ffffff;         /* чисто белая */
+  position: relative;
+  display: block;
+  z-index: 999;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translateX(-50%) rotate(45deg);
+}

@@ -1,0 +1,130 @@
+/* Gallery.module.css */
+
+.section {
+  background: #122622;
+  overflow: hidden;
+  min-height: 100svh;
+
+  padding-top: max(0px, env(safe-area-inset-top));
+  padding-bottom: max(0px, env(safe-area-inset-bottom));
+}
+
+.media {
+  position: relative;
+  width: 100%;
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ───── Контакты ───── */
+.contacts {
+  position: absolute;
+  left: 10%;
+  bottom: 15%;
+  width: 70%;
+
+  font-family: "Cormorant Infant", serif;
+  font-weight: 300; /* Light */
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.contactsTitle {
+  margin-bottom: 10px;
+}
+
+.line {
+  margin: 6px 0;
+}
+
+.phone {
+  pointer-events: auto;
+  color: rgba(255, 255, 255, 0.96);
+  text-decoration: none;
+}
+.phone:hover {
+  text-decoration: underline;
+}
+
+/* ───── Благодарность ───── */
+.thanks {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.thanksArt {
+  display: block;
+  width: 30px;            /* подгони при необходимости */
+  height: auto;
+  margin: 0 auto 10px;
+  pointer-events: none;
+  user-select: none;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.thanksText {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 700; /* Bold */
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+}
+
+/* ───── Авторство ───── */
+.footer {
+  position: absolute;
+  left: 5%;
+  bottom: 1%;
+
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 3.88px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: rgba(255, 255, 255, 0.62);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ступени */
+@media (min-width: 430px) {
+  .contacts { font-size: 15.5px; }
+  .thanksText { font-size: 13.5px; }
+  .footer { font-size: 4.2px; }
+}
+
+@media (min-width: 768px) {
+  .contacts { font-size: 16px; }
+  .thanksText { font-size: 14px; }
+  .footer { font-size: 4.6px; }
+}
