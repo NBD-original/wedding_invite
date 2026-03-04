@@ -1,48 +1,29 @@
 :root {
-    /* Brand */
-    --bg: #122622;
-    --bg-2: #122622;
-    --text: rgba(255, 255, 255, 0.92);
-    --muted: rgba(255, 255, 255, 0.68);
-    --line: rgba(255, 255, 255, 0.18);
-  
-    /* Typography */
-    --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  
-    /* Layout (mobile-first) */
-    --container: 100%;
-    --container-narrow: 100%;
-  
-    /* Spacing (mobile-first) */
-    --s-1: 4px;
-    --s-2: 8px;
-    --s-3: 12px;
-    --s-4: 16px;
-    --s-5: 20px;   /* было 24 */
-    --s-6: 28px;   /* было 32 */
-    --s-7: 40px;   /* было 48 */
-    --s-8: 56px;   /* было 72 */
-  
-    /* Radius & shadow */
-    --r-1: 10px;
-    --r-2: 16px;
-    --r-3: 24px;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  
-    /* Smooth */
-    --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
-  }
-  
-  /* Tablet+ */
-  @media (min-width: 768px) {
-    :root {
-      --container: 980px;
-      --container-narrow: 720px;
-      --s-5: 24px;
-      --s-6: 32px;
-      --s-7: 48px;
-      --s-8: 72px;
-    }
-  }
-  
+  --bg: #122622;
+  --bg-2: #122622;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --line: rgba(255, 255, 255, 0.18);
+
+  --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  --container: 100%;
+  --container-narrow: 100%;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 28px;
+  --s-7: 40px;
+  --s-8: 56px;
+
+  --r-1: 10px;
+  --r-2: 16px;
+  --r-3: 24px;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+}

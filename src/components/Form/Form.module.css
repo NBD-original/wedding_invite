@@ -2,24 +2,65 @@
   position: relative;
   background: #ffffff;
   overflow: hidden;
-  padding: 34px 0 60px;
+
+  /* больше воздуха сверху/снизу */
+  padding: 44px 0 56px;
+
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
+/* Паттерн */
 .pattern {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-
-  background-image: url("/images/form/wedding-pattern.png");
-  background-repeat: repeat;
-
-  background-size: 300px auto;
-  background-position: 60px 80px;
-
-  opacity: 0.08;
+}
+.word {
+  position: absolute;
+  width: 160px;
+  opacity: 0.5;
 }
 
+.w1 {
+  top: 60px;
+  left: 20px;
+}
+
+.w2 {
+  top: 140px;
+  right: 30px;
+}
+
+.w3 {
+  top: 300px;
+  left: 50px;
+}
+
+.w4 {
+  top: 380px;
+  right: 60px;
+}
+
+.w5 {
+  top: 520px;
+  left: 120px;
+}
+
+.w6 {
+  top: 640px;
+  right: 90px;
+}
+
+.word:nth-child(odd){
+  opacity:0.5;
+}
+
+.word:nth-child(even){
+  opacity:0.9;
+}
+/* Контент */
 .inner {
   position: relative;
   z-index: 1;
@@ -27,14 +68,18 @@
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  padding: 0 18px;
+
+  /* больше воздуха внутри карточки */
+  padding: 0 18px 6px;
 }
 
 .title {
   display: block;
   width: min(92vw, 360px);
   height: auto;
-  margin: 0 auto 18px;
+
+  /* больше воздуха под заголовком */
+  margin: 0 auto 22px;
 
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -46,21 +91,20 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px; /* чуть больше воздуха */
 }
 
-/* группа "вопрос + варианты" */
 .field {
   display: block;
 }
 
-/* тонкое поле как в макете, рамка чуть темнее */
+/* поля */
 .input {
   width: 100%;
-  height: 44px;
+  height: 46px; /* чуть выше, выглядит “дороже” */
   padding: 0 14px;
 
-  border: 1.5px solid rgba(0,0,0,0.85);
+  border: 1.6px solid rgba(0,0,0,0.85);
   border-radius: 0;
   background: rgba(255,255,255,0.92);
 
@@ -74,29 +118,58 @@
 }
 
 .input::placeholder {
-  color: rgba(0,0,0,0.75);
+  color: rgba(0,0,0,0.6);
+}
+.title {
+  position: relative;
+  text-align: center;
+
+  font-family: "Kapakana", serif;
+  font-weight: 400;
+
+  font-size: 120px;
+  line-height: 1;
+
+  color: #1c2e2a;
+
+  margin: 0 auto 24px;
 }
 
+/* надстрочный Guest */
+.titleGuest {
+  position: absolute;
+  font-size: 40px;
+  font-family: "Kapakana", serif;
+  font-size: 32px;
+  line-height: 1;
+
+  opacity: 0.9;
+}
 /* блок с появляющимися вопросами */
 .details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+
+  /* чтобы появление/скрытие не “липло” к соседям */
+  margin-top: 2px;
 }
 
 /* строки чеков */
 .checkRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  padding: 2px 2px 8px;
+  gap: 16px;
+
+  /* больше воздуха снизу, чтобы не “резалось” */
+  padding: 6px 2px 10px;
 }
 
 .checkGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 18px;
-  padding: 2px 2px 8px;
+  gap: 10px 16px;
+  padding: 6px 2px 10px;
 }
 
 .check {
@@ -153,9 +226,9 @@
   background: rgba(0,0,0,0.95);
 }
 
-/* кнопка */
+/* Кнопка */
 .submit {
-  margin: 36px auto 0;
+  margin: 18px auto 0; /* меньше, чтобы не было “пусто” */
   padding: 14px 34px;
 
   font-family: var(--font-serif);
@@ -166,52 +239,67 @@
   color: #0f1a17;
   background: #ffffff;
 
-  border: 1.5px solid rgba(15, 26, 23, 0.9);
+  border: 1.6px solid rgba(15, 26, 23, 0.9);
   border-radius: 999px;
 
   cursor: pointer;
   display: block;
-
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
+/* ✅ ВАЖНО: убираем “чёрный провал” на hover
+   (у тебя раньше hover делал background transparent и color white,
+   на белой секции это может выглядеть странно/темно) */
 .submit:hover {
-  background: transparent;
-  color: #ffffff;
+  background: rgba(15, 26, 23, 0.06);
+  color: #0f1a17;
 }
 
-/* чуть больше воздуха на больших */
-@media (min-width: 430px) {
-  .inner { max-width: 460px; }
-  .title { width: 380px; }
+/* disabled */
+.submit:disabled {
+  cursor: default;
 }
 
-/* --- Сообщения формы --- */
-
+/* Сообщения */
 .message {
   margin-top: 14px;
   padding: 12px 14px;
-
   text-align: center;
 
   font-family: "Cormorant Infant", serif;
   font-size: 14px;
   line-height: 1.4;
 
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
-/* Успех */
 .success {
   background: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Ошибка */
 .error {
   background: rgba(0, 0, 0, 0.06);
   color: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+/* ✅ optional: сделать форму одинаковой везде (без “десктопных” расширений) */
+@media (min-width: 430px) {
+  .inner { max-width: 420px; }
+  .title { width: min(92vw, 360px); }
+}
+
+@media (max-width: 420px) {
+
+  .title {
+    font-size: 100px;
+  }
+
+  .titleGuest {
+    font-size: 40px;
+    right: 50px;
+  }
+
 }

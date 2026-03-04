@@ -86,19 +86,25 @@ export default function GuestForm() {
 
   return (
     <section className={styles.section} id="form">
-      <div className={styles.pattern} aria-hidden="true" />
-
+      <div className={styles.pattern} aria-hidden="true">
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w1}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w2}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w3}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w4}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w5}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w6}`} />
+      </div>
       <div className={styles.inner}>
-        <motion.img
-          className={styles.title}
-          src="images/form/form-title.png"
-          alt="Form"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.35, once: false }}
-          transition={{ duration: 0.8 }}
-          draggable="false"
-        />
+      <motion.div
+        className={styles.title}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.35, once: false }}
+        transition={{ duration: 0.8 }}
+      >
+        <span className={styles.titleGuest}>Guest</span>
+        Form
+      </motion.div>
 
         {/* ✅ добавили onSubmit */}
         <form className={styles.form} onSubmit={onSubmit}>
