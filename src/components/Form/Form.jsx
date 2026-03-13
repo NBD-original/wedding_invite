@@ -93,6 +93,10 @@ export default function GuestForm() {
         <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w4}`} />
         <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w5}`} />
         <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w6}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w7}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w8}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w9}`} />
+        <img src="images/form/wedding.svg" className={`${styles.word} ${styles.w10}`} />
       </div>
       <div className={styles.inner}>
       <motion.div
@@ -303,6 +307,9 @@ export default function GuestForm() {
                 )}
               </motion.div>
             )}
+            <p className={styles.footerNote}>
+              С нетерпением ждём вас на свадьбе 🤍
+            </p>
         </form>
       </div>
     </section>

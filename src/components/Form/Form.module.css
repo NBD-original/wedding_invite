@@ -1,15 +1,12 @@
 .section {
   position: relative;
-  background: #ffffff;
+  background: transparent;
   overflow: hidden;
 
-  /* больше воздуха сверху/снизу */
   padding: 44px 0 56px;
 
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-
 /* Паттерн */
 .pattern {
   position: absolute;
@@ -17,11 +14,14 @@
   pointer-events: none;
   z-index: 0;
 }
+
 .word {
   position: absolute;
   width: 160px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
+
+
 
 .w1 {
   top: 60px;
@@ -53,18 +53,38 @@
   right: 90px;
 }
 
-.word:nth-child(odd){
-  opacity:0.5;
+.w7 {
+  top: 760px;
+  left: 40px;
 }
 
-.word:nth-child(even){
-  opacity:0.9;
+.w8 {
+  top: 860px;
+  right: 40px;
+}
+
+.w9 {
+  top: 980px;
+  left: 100px;
+}
+
+.w10 {
+  top: 1080px;
+  right: 80px;
+}
+
+.word:nth-child(odd) {
+  opacity: 0.5;
+}
+
+.word:nth-child(even) {
+  opacity: 0.8;
 }
 /* Контент */
 .inner {
   position: relative;
   z-index: 1;
-
+  background: transparent;
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
@@ -77,7 +97,7 @@
   display: block;
   width: min(92vw, 360px);
   height: auto;
-
+  background: transparent;
   /* больше воздуха под заголовком */
   margin: 0 auto 22px;
 
@@ -92,6 +112,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px; /* чуть больше воздуха */
+  background: transparent;
 }
 
 .field {
@@ -247,20 +268,15 @@
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-/* ✅ ВАЖНО: убираем “чёрный провал” на hover
-   (у тебя раньше hover делал background transparent и color white,
-   на белой секции это может выглядеть странно/темно) */
 .submit:hover {
   background: rgba(15, 26, 23, 0.06);
   color: #0f1a17;
 }
 
-/* disabled */
 .submit:disabled {
   cursor: default;
 }
 
-/* Сообщения */
 .message {
   margin-top: 14px;
   padding: 12px 14px;
@@ -285,21 +301,115 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* ✅ optional: сделать форму одинаковой везде (без “десктопных” расширений) */
-@media (min-width: 430px) {
-  .inner { max-width: 420px; }
-  .title { width: min(92vw, 360px); }
+.footerNote {
+  margin-top: 18px;
+  text-align: center;
+
+  font-family: "Cormorant Infant", serif;
+  font-size: 18px;
+  line-height: 1.35;
+  color: #1c2e2a;
+
+  opacity: 0.9;
 }
 
 @media (max-width: 420px) {
 
+
+  .inner {
+    background: transparent;
+    max-width: 340px;
+    padding: 0 14px 6px;
+  }
+
   .title {
+    background: transparent;
     font-size: 100px;
   }
 
   .titleGuest {
+    background: transparent;
     font-size: 40px;
     right: 50px;
   }
 
+  .word {
+    width: 118px;
+    opacity: 0.24;
+  }
+  /* более центрированное расположение вокруг формы */
+  .w1 {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-175px);
+  }
+
+  .w2 {
+    top: 95px;
+    left: 50%;
+    transform: translateX(55px);
+  }
+
+  .w3 {
+    top: 250px;
+    left: 50%;
+    transform: translateX(-170px);
+  }
+
+  .w4 {
+    top: 335px;
+    left: 50%;
+    transform: translateX(60px);
+  }
+
+  .w5 {
+    top: 515px;
+    left: 50%;
+    transform: translateX(-155px);
+  }
+
+  .w6 {
+    top: 615px;
+    left: 50%;
+    transform: translateX(45px);
+  }
+
+  .w7 {
+    top: 760px;
+    left: 50%;
+    transform: translateX(-165px);
+  }
+  
+  .w8 {
+    top: 860px;
+    left: 50%;
+    transform: translateX(50px);
+  }
+  
+  .w9 {
+    top: 980px;
+    left: 50%;
+    transform: translateX(-150px);
+  }
+  
+  .w10 {
+    top: 1080px;
+    left: 50%;
+    transform: translateX(40px);
+  }
+
+  .checkRow {
+    gap: 12px;
+  }
+
+  .checkGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footerNote {
+    font-size: 17px;
+    margin-top: 16px;
+    padding: 0 10px;
+  }
 }
