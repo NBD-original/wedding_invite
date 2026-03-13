@@ -152,7 +152,26 @@
 
   margin: 10px -20px 24px;
 }
+.questionLabel {
+  width: 100%;
+  padding: 12px 14px;
 
+  border: 1.6px solid rgba(0, 0, 0, 0.85);
+  background: transparent;
+
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #111;
+
+  white-space: normal;
+  word-break: break-word;
+}
+
+textarea {
+  white-space: normal;
+}
 
 .titleGuest {
   position: absolute;
@@ -318,6 +337,11 @@
 
 @media (max-width: 420px) {
 
+  .questionLabel {
+    padding: 10px 12px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
 
   .inner {
     background: transparent;

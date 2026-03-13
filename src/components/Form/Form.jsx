@@ -127,14 +127,12 @@ export default function GuestForm() {
 
           {/* Присутствие */}
           <div className={styles.field}>
-            <input
-              className={styles.input}
-              type="text"
-              value="Ваше присутствие на свадьбе"
-              readOnly
-            />
+          <div className={styles.questionLabel}>
+            Ваше присутствие на свадьбе
+          </div>
 
-            <div className={styles.checkRow}>
+          <div className={styles.checkRow}>
+
               <label className={styles.check}>
                 <input
                   type="radio"
@@ -172,12 +170,9 @@ export default function GuestForm() {
               >
                 {/* Трансфер */}
                 <div className={styles.field}>
-                  <input
-                    className={styles.input}
-                    type="text"
-                    value="Понадобится ли Вам трансфер?"
-                    readOnly
-                  />
+                  <div className={styles.questionLabel}>
+                    Понадобится ли Вам трансфер?
+                  </div>
 
                   <div className={styles.checkRow}>
                     <label className={styles.check}>
@@ -206,43 +201,36 @@ export default function GuestForm() {
 
                 {/* Алкоголь */}
                 <div className={styles.field}>
-                  <input
-                    className={styles.input}
-                    type="text"
-                    value="Что предпочитаете из алкогольных напитков?"
-                    readOnly
-                  />
-
-                  <div className={styles.checkGrid}>
-                    {[
-                      { value: "none", label: "Я не пью" },
-                      { value: "vodka", label: "Vodka" },
-                      { value: "wine", label: "Вино" },
-                      { value: "champagne", label: "Шампанское" },
-                      { value: "whisky", label: "Whisky" },
-                    ].map((item) => (
-                      <label key={item.value} className={styles.check}>
-                        <input
-                          type="checkbox"
-                          name="drink"
-                          value={item.value}
-                          checked={drinks.includes(item.value)}
-                          onChange={() => toggleDrink(item.value)}
-                        />
-                        <span>{item.label}</span>
-                      </label>
-                    ))}
-                  </div>
+                <div className={styles.questionLabel}>
+                  Что предпочитаете из алкогольных напитков?
                 </div>
 
+                <div className={styles.checkGrid}>
+                  {[
+                    { value: "none", label: "Я не пью" },
+                    { value: "vodka", label: "Vodka" },
+                    { value: "wine", label: "Вино" },
+                    { value: "champagne", label: "Шампанское" },
+                    { value: "whisky", label: "Whisky" },
+                  ].map((item) => (
+                    <label key={item.value} className={styles.check}>
+                      <input
+                        type="checkbox"
+                        name="drink"
+                        value={item.value}
+                        checked={drinks.includes(item.value)}
+                        onChange={() => toggleDrink(item.value)}
+                      />
+                      <span>{item.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
                 {/* Тост */}
                 <div className={styles.field}>
-                  <input
-                    className={styles.input}
-                    type="text"
-                    value="Хотели бы произнести тост на банкете молодых?"
-                    readOnly
-                  />
+                  <div className={styles.questionLabel}>
+                    Хотели бы произнести тост на банкете молодых?
+                  </div>
 
                   <div className={styles.checkRow}>
                     <label className={styles.check}>
@@ -268,6 +256,7 @@ export default function GuestForm() {
                     </label>
                   </div>
                 </div>
+                    
               </motion.div>
             )}
           </AnimatePresence>
