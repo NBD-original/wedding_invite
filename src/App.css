@@ -1,9 +1,9 @@
-/* фиксируем "телефонный" вид даже на ПК */
+
 #root {
   width: 100%;
-  max-width: 420px;          /* телефонная ширина (можно 390px / 414px) */
+  max-width: 420px;         
   margin: 0 auto;
-  padding: 0;                /* важно: не добавляем десктопные поля */
+  padding: 0;               
   text-align: center;
   min-height: 100vh;
 }
@@ -15,7 +15,7 @@
   font-style: normal;
   font-display: swap;
 }
-/* чтобы фон вокруг на ПК был нейтральный (опционально) */
+
 body {
-  background: #122622;        /* можно оставить белым, если хочешь */
+  background: #ffffff;
 }
